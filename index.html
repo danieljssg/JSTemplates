@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Interfaces WEB</title>
+  </head>
+  <body>
+    <div class="container pt">
+      <header class="tabs">
+        <ul>
+          <li class="is-active" target="contactos"><a>Contactos</a></li>
+          <li target="agenda"><a>Agenda</a></li>
+          <li target="busquedaContacto"><a>Búsqueda Contactos</a></li>
+          <li target="busquedaEvento"><a>Búsqueda Eventos</a></li>
+        </ul>
+      </header>
+      <main class="tab-content">
+        <section id="contactos" class="show">
+          <form id="form-contacto" class="form side-by-side">
+            <div class="form-group">
+              <h2>Datos personales</h2>
+
+              <div class="form-element">
+                <span>Nombre</span>
+                <input type="text" id="input-nomPersonal" autofocus />
+              </div>
+              <div class="form-element">
+                <span>Domicilio</span>
+                <input type="text" id="input-domPersonal" />
+              </div>
+              <div class="form-element">
+                <span>Teléfono</span>
+                <input type="phone" id="input-tlfPersonal" />
+              </div>
+              <div class="form-element">
+                <span>Celular</span>
+                <input type="phone" id="input-celPersonal" />
+              </div>
+              <div class="form-element">
+                <span>Fecha de Nacimiento</span>
+                <input type="date" id="input-fechaNac" />
+              </div>
+              <div class="form-element">
+                <span>Sexo</span>
+                <select id="input-sexo" name="sexo">
+                  <option value="Masculino">Masculino</option>
+                  <option value="Femenino">Femenino</option>
+                  <option value="Otro">Otro</option>
+                  <option selected disabled hidden>Selecione</option>
+                </select>
+              </div>
+
+              <hr />
+              <br />
+              <button disabled class="btn" type="">Nuevo</button>
+              <button class="btn" type="submit">Agregar</button>
+            </div>
+
+            <div class="form-group">
+              <h2>Datos laborales</h2>
+
+              <div class="form-element">
+                <span>Nombre Empresa</span>
+                <input type="text" id="input-nomEmpresa" />
+              </div>
+              <div class="form-element">
+                <span>Puesto</span>
+                <input type="text" id="input-puesto" />
+              </div>
+              <div class="form-element">
+                <span>Domicilio</span>
+                <input type="text" id="input-domEmpresa" />
+              </div>
+              <div class="form-element">
+                <span>Teléfono</span>
+                <input type="phone" id="input-telEmpresa" />
+              </div>
+              <div class="form-element">
+                <span>Extensión</span>
+                <input type="phone" id="input-extEmpresa" />
+              </div>
+              <div class="form-element">
+                <span>Correo Electrónico</span>
+                <input type="email" id="input-email" />
+              </div>
+            </div>
+          </form>
+        </section>
+        <section id="agenda">
+          <form id="form-agenda" class="side-by-side form">
+            <div class="form-group">
+              <h2>Agenda</h2>
+
+              <div class="form-element">
+                <span>Contacto</span>
+                <select id="input-contacto"></select>
+              </div>
+
+              <div class="form-element">
+                <span>Día</span>
+                <input type="number" id="input-dia" />
+              </div>
+              <div class="form-element">
+                <span>Mes</span>
+                <input type="number" id="input-mes" />
+              </div>
+              <div class="form-element">
+                <span>Año</span>
+                <input type="number" id="input-anio" />
+              </div>
+              <div class="form-element">
+                <span>Lugar</span>
+                <input type="text" id="input-lugar" />
+              </div>
+              <div class="form-element">
+                <span>Nota</span>
+                <input type="text" id="input-nota" />
+              </div>
+              <hr />
+              <br />
+              <button class="btn" type="submit">Agregar</button>
+            </div>
+          </form>
+        </section>
+        <section id="busquedaContacto">
+          <div class="grid">
+            <div class="card">
+              <form id="form-BContacto" class="side-by-side from">
+                <div class="form-group">
+                  <h2>Buscar Contacto</h2>
+
+                  <div class="form-element">
+                    <span>Nombre</span>
+                    <input type="text" id="input-busqNombre" autofocus />
+                  </div>
+                  <div class="form-group">
+                    <button class="btn" type="submit">Buscar</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="card">
+              <h2>Resultados de Búsqueda</h2>
+              <div id="resContactos"></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <table id="tablaContactos">
+              <thead>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Nombre de la Empresa</th>
+                  <th>Telefono de trabajo</th>
+                  <th>Extension</th>
+                  <th>Correo Electrónico</th>
+                </tr>
+              </thead>
+              <tbody id="bodyTContactos"></tbody>
+            </table>
+          </div>
+        </section>
+        <section id="busquedaEvento">
+          <div class="grid">
+            <div class="card">
+              <form id="form-BEvento" class="side-by-side from">
+                <div class="form-group">
+                  <h2>Buscar Eventos</h2>
+
+                  <div class="form-element">
+                    <span>Día</span>
+                    <input type="number" id="input-busqDia" autofocus />
+                  </div>
+                  <div class="form-element">
+                    <span>Mes</span>
+                    <input type="number" id="input-busqMes" />
+                  </div>
+                  <div class="form-element">
+                    <span>Año</span>
+                    <input type="number" id="input-busqAnio" />
+                  </div>
+                  <div class="form-group">
+                    <button class="btn" type="submit">Buscar</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="card">
+              <h2>Resultados de Búsqueda</h2>
+              <div id="resEventos"></div>
+            </div>
+          </div>
+
+            <div class="card">
+              <table id="tablaEventos">
+                <thead>
+                  <tr>
+                    <th>Dia</th>
+                    <th>Mes</th>
+                    <th>Año</th>
+                    <th>Hora</th>
+                    <th>Lugar</th>
+                    <th>Nota</th>
+                  </tr>
+                </thead>
+                <tbody id="bodyTEventos"></tbody>
+              </table>
+            </div>
+          </form>
+        </section>
+      </main>
+    </div>
+
+    <template id="template-tableContactos">
+      <tr>
+        <td>Nombre</td>
+        <td>Empresa</td>
+        <td>Tel. Empresa</td>
+        <td>Extensión</td>
+        <td>mail@mail.com</td>
+      </tr>
+    </template>
+
+    <template id="template-tableEventos">
+      <tr>
+        <td>Dia</td>
+        <td>Mes</td>
+        <td>Año</td>
+        <td>Lugar</td>
+        <td>Nota</td>
+        <td>Contacto</td>
+      </tr>
+    </template>
+
+    <template id="template-BContactos">
+      <p>Nombre</p>
+      <p>Empresa</p>
+      <p>Tel. Empresa</p>
+      <p>Extensión</p>
+      <p>mail@mail.com</p>
+    </template>
+
+    <template id="template-BEventos">
+      <p>Dia-Mes-Año</p>
+      <p>Lugar</p>
+      <p>Nota</p>
+      <p>Contacto</p>
+    </template>
+
+    <template id="template-option">
+      <option>N. Contacto</option>
+    </template>
+    <script src="js/app.js"></script>
+  </body>
+</html>
